@@ -6,17 +6,17 @@ get '/' do
 end
 
 get '/register' do
+	session[:error] = []
 		erb :"static/signup"
 end
 
 post '/signup' do
 	user = User.new(params[:user])
-	user.save
 	if user.save
 		redirect '/'
 	else
 		session[:error]=user.errors.full_messages
-		redirect '/register'
+		erb :"static/signup"
 	end
 end
 
