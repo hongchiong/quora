@@ -1,0 +1,18 @@
+<h1><a href="/" >Quess</a></h1>
+<h1>Welcome! 
+<%= session[:username] %>
+</h1>
+<ul>
+<% @questions.each do |e| %>
+	<li><%= e.body %></li>
+<% end %>
+</ul>
+
+<form action='/questions/<%= current_user.id %>' method='get'>
+	<input type='submit' value='View All Questions'>
+</form>
+
+<form action='/sessions' method='post'>
+	<input type="hidden" name="_method" value="delete">
+	<input type='submit' value='Logout'>
+</form>

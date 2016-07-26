@@ -1,10 +1,10 @@
-class User < ActiveRecord::Base
-  has_many :questions
+class Question < ActiveRecord::Base
+  belongs_to :user
   has_many :answers
-	has_secure_password
-	validates_uniqueness_of :username, :email
-	validates_format_of :username, :with => /\A[a-zA-Z0-9]+\Z/
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+	# has_secure_password
+	# validates_uniqueness_of :username, :email
+	# validates_format_of :username, :with => /\A[a-zA-Z0-9]+\Z/
+ #  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 
   # def password
   # 	@password ||= Password.new(password_hash)

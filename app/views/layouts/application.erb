@@ -3,6 +3,14 @@
 		<title>Quess</title>
 	</head>
 	<body>
+		<div id="navbar">
+			<a href="/"><h1>Quora Clone</h1></a>
+		</div>
+		<div>
+			<% if logged_in? %>
+				<%= current_user.username %>
+			<% end %>
+		</div>
 		<%= yield %>
 	</body>
 </html>
