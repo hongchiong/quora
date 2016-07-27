@@ -1,6 +1,7 @@
 class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers
+  has_many :question_votes
 	# has_secure_password
 	# validates_uniqueness_of :username, :email
 	# validates_format_of :username, :with => /\A[a-zA-Z0-9]+\Z/

@@ -1,7 +1,7 @@
 post '/questions' do
 	if logged_in?
-		@question = Question.create(params[:question])
-		redirect to '/questions/' + @questions.id.to_s
+		@question = Question.create(user_id: current_user.id, body: params[:question])
+		redirect to '/questions/' + current_user.id.to_s
 	else
 		erb :'session/new'
 	end

@@ -9,7 +9,7 @@ end
 
 get '/users/:id' do
 
-	@questions = current_user.questions
+	@questions = Question.all
 	erb :"users/show"
 end
 

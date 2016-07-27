@@ -1,0 +1,9 @@
+<h1><%= @question %></h1>
+
+<h2>Answers:</h2>
+
+<ul>
+	<% @answers.each do |a| %>
+	<li><%= a.body %></li>
+	<% end %>
+</ul>
