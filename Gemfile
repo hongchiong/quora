@@ -24,6 +24,7 @@ gem 'rake'
 # Adding rspec for running unit testing
 gem 'rspec'
 
+gem 'will_paginate', '~> 3.0.6'
 gem 'byebug'
 gem 'bcrypt'
 group :development, :test do

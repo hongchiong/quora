@@ -1,0 +1,86 @@
+.home {
+	font-family: sans-serif;
+	font-size: 150px;
+	text-align: center;
+	display: block;
+	margin: auto;
+	width: 55%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.btn-primary {
+	border-style: none;
+}
+
+.forminput {
+	width: 100%;
+    background-color: white;
+    padding: 8px;
+    margin: 1px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #337ab7;
+}
+
+.clearfix {
+	clear: both;
+}
+
+#left {
+	float: left;
+	width: 50%;
+}
+
+#right {
+	float: right;
+	width: 50%;
+}
+
+.indexform {
+	margin: 30px;
+}
+
+#indexlogin {
+	width: 45%;
+	margin: 1px;
+	margin-left: 5px;
+	height: 82px;
+	font-size: 30px;
+}
+
+#indexacc {
+	width: 45%;
+	margin:1px;
+	height: 82px;
+	font-size: 30px;
+	padding-top: 20px;
+	border-radius: 0px;
+	margin-bottom: 13px;
+}
+
+.qncontainer {
+	display: -webkit-flex;
+    display: flex;
+   	margin: 0 auto;
+    width: 90%;
+    height: 55%;
+    justify-content: space-around;
+}
+
+.qnlist a {
+	color: white;
+}
+
+.qnlist {
+    background-color: #337ab7;
+    width: 150px;
+    height: 150px;
+	text-align: center;
+	padding: 10px;
+	font-size: 20px; 
+	flex-grow: 1;
+	margin: 5px;
+}
