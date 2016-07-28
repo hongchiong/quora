@@ -8,7 +8,6 @@ get '/users/new' do
 end
 
 get '/users/:id' do
-
 	@questions = Question.all
 	erb :"users/show"
 end

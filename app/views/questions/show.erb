@@ -1,5 +1,5 @@
 <ul>
 	<% @question.each do |q| %>
-	<li><%= q.body %><a href="/questions/<%= q.id %>/edit">Edit</a></li>
+	<li><%= q.body %><a href="/questions/<%= q.id %>/edit"><button>Edit</button></a></li>
 	<% end %>
 </ul>

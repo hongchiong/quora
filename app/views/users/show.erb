@@ -4,7 +4,16 @@
 </h1>
 <ul>
 <% @questions.each do |q| %>
-	<li><a href="/questions/<%= q.id %>/answers/show"><%= q.body %></a>   <a href="/questions/<%= q.id %>/answers/new">Answer Question</a></li>
+	<li><a href="/questions/<%= q.id %>/answers/show"><%= q.body %></a>   <a href="/questions/<%= q.id %>/answers/new"><button>Answer Question</button></a>
+
+	<form action='/questions/<%= q.id %>/upvote' method='post'>
+		<input type='submit' value='Upvote | <% if q.question_votes.nil? %>0<% else %><%= q.question_votes.where(vote: 1).count %><% end %>'>
+	</form>
+	<form action='/questions/<%= q.id %>/downvote' method='post'>
+		<input type='submit' value='Downvote | <% if q.question_votes.nil? %>0<% else %><%= q.question_votes.where(vote: 0).count %><% end %>'>
+	</form>
+
+	</li>
 <% end %>
 </ul>
 
@@ -16,10 +25,6 @@
 
 <form action='/questions/<%= current_user.id %>' method='get'>
 	<input type='submit' value='View My Questions'>
-</form>
-
-<form action='/answers/<%= current_user.id %>' method='get'>
-	<input type='submit' value='View My Answers'>
 </form>
 
 <form action='/sessions' method='post'>

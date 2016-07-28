@@ -4,6 +4,16 @@
 
 <ul>
 	<% @answers.each do |a| %>
-	<li><%= a.body %></li>
+	<li><%= a.body %>
+	<% if logged_in? %>
+		<form action='/questions/<%= a.question_id %>/answers/<%= a.id %>/upvote' method='post'>
+			<input type='submit' value='Upvote | <% if a.answer_votes.nil? %>0<% else %><%= a.answer_votes.where(vote: 1).count %><% end %>'>
+		</form>
+		<form action='/questions/<%= a.question_id %>/answers/<%= a.id %>/downvote' method='post'>
+			<input type='submit' value='Downvote | <% if a.answer_votes.nil? %>0<% else %><%= a.answer_votes.where(vote: 0).count %><% end %>'>
+		</form>
+	<% end %>
+	
+	</li>
 	<% end %>
 </ul>
